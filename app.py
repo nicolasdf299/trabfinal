@@ -4,7 +4,7 @@ import numpy as np
 import joblib
 
 # Carregando o modelo treinado
-model = joblib.load('model.pkl')
+model = joblib.load('modelo_anime.pkl')
 
 st.title('Previsão de Rating de Animes')
 
