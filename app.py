@@ -5,7 +5,7 @@ import joblib
 
 # Carregar o modelo treinado
 model = joblib.load('modelo_anime.pkl')
-
+modeloScaler = joblib.load('modelo_scaler.pkl')
 st.title('Previsão de Rating de Animes')
 
 st.write('Preencha os dados abaixo para prever o rating:')
@@ -50,5 +50,6 @@ input_data.extend(type_one_hot)
 # ==== Fazer a previsão ====
 if st.button('Prever Rating'):
     final_array = np.array(input_data).reshape(1, -1)
-    prediction = model.predict(final_array)[0]
+    final_array2= modeloScaler.transform(final_array)
+    prediction = model.predict(final_array2)[0]
     st.success(f'Rating previsto: {prediction:.2f}')
