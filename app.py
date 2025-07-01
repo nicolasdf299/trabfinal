@@ -11,7 +11,7 @@ st.title('Previsão de Rating de Animes')
 st.write('Preencha os dados abaixo para prever o rating:')
 
 # ==== FEATURES ====
-feature_names = ['anime_id', 'episodes', 'members', 
+feature_names = ['episodes', 'members', 
                  'Ação / Aventura / Conflito', 'Comédia e Paródia', 'Conteúdo Adulto / Sensível',
                  'Fantasia / Sobrenatural', 'Ficção Científica / Futuro', 'Psicológico / Mistério / Suspense',
                  'Público-Alvo / Demográfico', 'Relacionamentos (BL / GL)', 'Vida Real / Drama',
@@ -21,7 +21,7 @@ feature_names = ['anime_id', 'episodes', 'members',
 st.subheader('Informações Numéricas:')
 input_data = []
 
-numeric_features = ['anime_id', 'episodes', 'members']
+numeric_features = ['episodes', 'members']
 for feature in numeric_features:
     value = st.number_input(f'{feature}', min_value=0, step=1)
     input_data.append(value)
